@@ -26,7 +26,7 @@ public class ExerciseDAOImpl implements ExerciseDAO{
 	}
 	
 	@Override
-	public EVO selectExerciseOneList(String idx) throws Exception {
-		return sqlSessionTemplate.selectOne("exOneList",idx);
+	public EVO selectExerciseOneList(String eid) throws Exception {
+		return sqlSessionTemplate.selectOne("exOneList",eid);
 	}
 }

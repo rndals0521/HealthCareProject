@@ -8,5 +8,5 @@ public interface ExerciseService {
 
 	List<EVO> selectExerciseList(String category, String part) throws Exception;
 	
-	EVO selectExerciseOneList(String idx) throws Exception;
+	EVO selectExerciseOneList(String eid) throws Exception;
 }

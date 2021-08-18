@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,22 +66,22 @@
 						<a href="exercise.do?category=health&part=all"><img src="resources/images/back_s.png">전체</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/arm2_s.png">이두</a>
+						<a href="exercise.do?category=health&part=biceps"><img src="resources/images/arm2_s.png">이두</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/back_s.png">가슴</a>
+						<a href="exercise.do?category=health&part=chest"><img src="resources/images/back_s.png">가슴</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/sungmo_s.png">등</a>
+						<a href="exercise.do?category=health&part=back"><img src="resources/images/sungmo_s.png">등</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/foot_s.png">하체</a>
+						<a href="exercise.do?category=health&part=lowerBody"><img src="resources/images/foot_s.png">하체</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/arm2_s.png">어깨</a>
+						<a href="exercise.do?category=health&part=shoulder"><img src="resources/images/arm2_s.png">어깨</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=all"><img src="resources/images/bae_s.png">복근</a>
+						<a href="exercise.do?category=health&part=Abs"><img src="resources/images/bae_s.png">복근</a>
 					</li>
 					
 				</ul>
@@ -94,15 +95,19 @@
 		
 		<div class="ex-item-container">
 			<div class="ex-item">
-				<div>
-					<div class="badge">
-						케이블바벨컬
+				<c:forEach var="k" items="${elist }">
+				
+					<div>
+						<div class="badge">
+							${k.e_name }
+						</div>
+						<a href="ExerciseDetail.do?eid=${k.eid }">
+						<img class="ex-item-image" src="resources/images/${k.e_image }">
+						</a>
 					</div>
-					<a href="ExerciseDetail.do">
-					<img class="ex-item-image" src="resources/images/bicep-cable_bicep_curl.jpg">
-					</a>
-				</div>
-				<div>
+				</c:forEach>
+				
+				<!-- <div>
 					<div class="badge">
 						해머컬
 					</div>
@@ -113,9 +118,9 @@
 						프리처컬
 					</div>
 					<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-priture_curl.jpg"></a>
-				</div>
+				</div> -->
 			</div>
-			<div class="ex-item">
+			<!-- <div class="ex-item">
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-concentration_dumbbell_curls.png"></a>
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-sitted_dumbbel_curl.jpg"></a>
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-priture_curl.jpg"></a>
@@ -129,7 +134,7 @@
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-hammer_curl.jpg"></a>
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-sitted_dumbbel_curl.jpg"></a>
 				<a href="ExerciseDetail.do"><img class="ex-item-image" src="resources/images/bicep-sitted_dumbbel_curl.jpg"></a>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	

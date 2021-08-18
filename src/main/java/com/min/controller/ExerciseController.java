@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,18 +22,18 @@ public class ExerciseController {
 	@Autowired
 	private ExerciseService exerciseService;
 	
-	/* DB 처리가 안나서 아직 오류남 category와 part를 받아서 리스트가져와서 출력하기
+	// DB 처리가 안나서 아직 오류남 category와 part를 받아서 리스트가져와서 출력하기
 	@RequestMapping("exercise.do")
 	public ModelAndView exerciseCommand(HttpServletRequest request) {
 		try {
-			ModelAndView mv = new ModelAndView("redirect:3-1_Exercise.jsp");
+			ModelAndView mv = new ModelAndView("3-1_Exercise");
 			String category = request.getParameter("category");
 			String part = request.getParameter("part");
 			if(category == null && part==null) {
 				category = "health";
 			}
 			if(part == null) {
-				part = "all";
+				part = "chest";
 			}
 			List<EVO> elist = exerciseService.selectExerciseList(category,part);
 			mv.addObject("elist",elist);
@@ -41,17 +42,26 @@ public class ExerciseController {
 		}
 		return null;
 	}
-	*/
+	
+	
+	/*
 	@RequestMapping("exercise.do")
 	public ModelAndView exerciseCommand() {
 		ModelAndView mv = new ModelAndView("3-1_Exercise");
 		return mv;
 	}
+	*/
 	
 	@RequestMapping("ExerciseDetail.do")
-	public ModelAndView exerciseDetailCommand() {
-		ModelAndView mv = new ModelAndView("3-2_Exercise_detail");
-		return mv;
+	public ModelAndView exerciseDetailCommand(@RequestParam("eid")String eid) {
+		try {
+			ModelAndView mv = new ModelAndView("3-2_Exercise_detail");
+			EVO evo = exerciseService.selectExerciseOneList(eid);
+			mv.addObject("evo",evo);
+			return mv;
+		} catch (Exception e) {
+		}
+		return null;
 	}
 	
 	@RequestMapping("routine.do")

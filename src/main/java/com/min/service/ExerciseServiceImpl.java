@@ -21,7 +21,7 @@ public class ExerciseServiceImpl implements ExerciseService{
 	
 	
 	@Override
-	public EVO selectExerciseOneList(String idx) throws Exception {
-		return exerciseDAO.selectExerciseOneList(idx);
+	public EVO selectExerciseOneList(String eid) throws Exception {
+		return exerciseDAO.selectExerciseOneList(eid);
 	}
 }

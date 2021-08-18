@@ -35,11 +35,11 @@
 	<!--  ================================================  -->    
 	<!-- Exercise -->
 	<select id="exList" parameterType="map" resultType="com.min.vo.EVO">
-		select * from exercise where category = #{category} and part = #{part}
+		select * from exercise where e_category = #{category} and e_part = #{part}
 	</select>
 	
 	<select id="exOneList" parameterType="String" resultType="com.min.vo.EVO">
-		select * from exercise where e_idx = #{idx}
+		select * from exercise where eid = #{eid}
 	</select>
 	
 	
