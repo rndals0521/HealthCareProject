@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-2_Routine.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/4-2_Routine.css" type="text/css" rel="stylesheet">
 
 <meta charset="UTF-8">
 <title>MyRoutine</title>
@@ -37,23 +37,28 @@
 				<div class="r-day-rt">
 					<div class="r-day-rtitem">
 						<a href="routine_detail.do">[ 가슴운동루틴 ]</a>
-						<a>수정 | 삭제</a>
+						<input type="button" class="r-d-btn" value="수정">
+						<input type="button" class="r-d-btn" value="삭제">
 					</div>
 					<div class="r-day-rtitem">
 						<a>[ 가슴운동루틴 ]</a>
-						<a>수정 | 삭제</a>
+						<input type="button" class="r-d-btn" value="수정">
+						<input type="button" class="r-d-btn" value="삭제">
 					</div>
 					<div class="r-day-rtitem">
 						<a>[ 팔운동루틴 ]</a>
-						<a>수정 | 삭제</a>
+						<input type="button" class="r-d-btn" value="수정">
+						<input type="button" class="r-d-btn" value="삭제">
 					</div>
 					<div class="r-day-rtitem">
 						<a>[ 등운동루틴 ]</a>
-						<a>수정 | 삭제</a>
+						<input type="button" class="r-d-btn" value="수정">
+						<input type="button" class="r-d-btn" value="삭제">
 					</div>
 					<div class="r-day-rtitem">
 						<a>[ 어깨운동루틴 ]</a>
-						<a>수정 | 삭제</a>
+						<input type="button" class="r-d-btn" value="수정">
+						<input type="button" class="r-d-btn" value="삭제">
 					</div>
 				</div>
 			</div>
@@ -62,24 +67,30 @@
 				<div class="r-week-title">일주일 루틴</div>
 				<div class="r-week-rt">
 					<div class="r-week-rtitem">
-						<a>[ 운동루틴1 ]</a>
-						<a>수정 | 삭제</a>
+						<a href="#">[ 운동루틴1 ]</a>
+						<input type="button" class="r-w-btn" value="수정">
+						<input type="button" class="r-w-btn" value="삭제">
+						
 					</div>
 					<div class="r-week-rtitem">
-						<a>[ 운동루틴1 ]</a>
-						<a>수정 | 삭제</a>
+						<a href="#">[ 운동루틴1 ]</a>
+						<input type="button" class="r-w-btn" value="수정">
+						<input type="button" class="r-w-btn" value="삭제">
 					</div>
 					<div class="r-week-rtitem">
-						<a>[ 운동루틴1 ]</a>
-						<a>수정 | 삭제</a>
+						<a href="#">[ 운동루틴2 ]</a>
+						<input type="button" class="r-w-btn" value="수정">
+						<input type="button" class="r-w-btn" value="삭제">
 					</div>
 					<div class="r-week-rtitem">
-						<a>[ 운동루틴1 ]</a>
-						<a>수정 | 삭제</a>
+						<a href="#">[ 운동루틴3 ]</a>
+						<input type="button" class="r-w-btn" value="수정">
+						<input type="button" class="r-w-btn" value="삭제">
 					</div>
 					<div class="r-week-rtitem">
-						<a>[ 운동루틴1 ]</a>
-						<a>수정 | 삭제</a>
+						<a href="#">[ 운동루틴4 ]</a>
+						<input type="button" class="r-w-btn" value="수정">
+						<input type="button" class="r-w-btn" value="삭제">
 					</div>
 				</div>
 			

@@ -66,7 +66,7 @@ public class ExerciseController {
 	
 	@RequestMapping("routine.do")
 	public ModelAndView routineCommand() {
-		ModelAndView mv = new ModelAndView("4-1_Routine");
+		ModelAndView mv = new ModelAndView("4-1_Routine2");
 		return mv;
 	}
 	
@@ -93,6 +93,7 @@ public class ExerciseController {
 		ModelAndView mv = new ModelAndView("4-4_Routine_write");
 		return mv;
 	}
+	
 	
 	
 }

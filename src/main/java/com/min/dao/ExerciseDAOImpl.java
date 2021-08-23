@@ -29,4 +29,22 @@ public class ExerciseDAOImpl implements ExerciseDAO{
 	public EVO selectExerciseOneList(String eid) throws Exception {
 		return sqlSessionTemplate.selectOne("exOneList",eid);
 	}
+	
+	
+	
+	// 운동 삽입,수정,삭제
+	@Override
+	public int insertExerciseAdd(EVO evo) throws Exception {
+		return 0;
+	}
+	
+	@Override
+	public int deleteExerciseDel(String eid) throws Exception {
+		return 0;
+	}
+	
+	@Override
+	public int updateExerciseUp(EVO evo) throws Exception {
+		return 0;
+	}
 }

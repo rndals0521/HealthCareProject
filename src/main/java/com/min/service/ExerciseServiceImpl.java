@@ -24,4 +24,23 @@ public class ExerciseServiceImpl implements ExerciseService{
 	public EVO selectExerciseOneList(String eid) throws Exception {
 		return exerciseDAO.selectExerciseOneList(eid);
 	}
+	
+	
+	
+	
+	// 운동 삽입,삭제,수정
+	@Override
+	public int insertExerciseAdd(EVO evo) throws Exception {
+		return exerciseDAO.insertExerciseAdd(evo);
+	}
+	
+	@Override
+	public int deleteExerciseDel(String eid) throws Exception {
+		return exerciseDAO.deleteExerciseDel(eid);
+	}
+	
+	@Override
+	public int updateExerciseUp(EVO evo) throws Exception {
+		return exerciseDAO.updateExerciseUp(evo);
+	}
 }

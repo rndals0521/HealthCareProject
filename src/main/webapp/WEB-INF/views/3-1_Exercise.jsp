@@ -62,9 +62,11 @@
 			</div>
 			<div id="frame">
 				<ul id="banner">
+					<!-- 
 					<li class="list-category">
 						<a href="exercise.do?category=health&part=all"><img src="resources/images/back_s.png">전체</a>
 					</li>
+					 -->
 					<li class="list-category">
 						<a href="exercise.do?category=health&part=biceps"><img src="resources/images/arm2_s.png">이두</a>
 					</li>
