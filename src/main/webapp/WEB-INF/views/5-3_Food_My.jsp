@@ -17,7 +17,7 @@
 				<a href="food_my.do"> My 식단 </a>
 			</div>
 			<div class="menu-myR">
-				<a> 식단공유 </a>
+				<a href="food_share.do"> 식단공유 </a>
 			</div>
 			<div class="menu-share">
 				<a href="food_cal.do"> 계산기 </a>

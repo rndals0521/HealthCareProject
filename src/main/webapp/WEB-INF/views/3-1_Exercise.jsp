@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/3-1_Exercise.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/3-1_Exercise.css" type="text/css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Excercise</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -47,8 +47,8 @@
 	<jsp:include page="Top.jsp"></jsp:include>
 	
 	<div class="ex-category">
-		<a href="exercise.do?category=health&part=all">헬스</a>
-		<a href="exercise.do?category=yoga&part=all">요가</a>
+		<a href="exercise.do?category=health&part=chest">헬스</a>
+		<a href="exercise.do?category=yoga&part=yoga">요가</a>
 		<a href="exercise.do?category=pilates&part=all">필라테스</a>
 	</div>
 	

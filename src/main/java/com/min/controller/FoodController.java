@@ -36,4 +36,10 @@ public class FoodController {
 		ModelAndView mv = new ModelAndView("5-4_Food_Cal");
 		return mv;
 	}
+	
+	@RequestMapping("food_share.do")
+	public ModelAndView foodShareCommand() {
+		ModelAndView mv = new ModelAndView("5-5_Food_share");
+		return mv;
+	}
 }

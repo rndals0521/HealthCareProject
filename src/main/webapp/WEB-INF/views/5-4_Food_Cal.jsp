@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/5-4_Food_Cal.css" type="text/css" rel="stylesheet">
+<link href="resources/css/5-4_Food_Cal.css?ver=1" type="text/css" rel="stylesheet">
 
 <meta charset="UTF-8">
 <title>MY 식단</title>
@@ -42,7 +42,7 @@ function fn_reset(){
 				<a href="food_my.do"> My 식단 </a>
 			</div>
 			<div class="menu-myR">
-				<a> 식단공유 </a>
+				<a href="food_share.do"> 식단공유 </a>
 			</div>
 			<div class="menu-share">
 				<a href="food_cal.do"> 계산기 </a>

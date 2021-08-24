@@ -8,8 +8,15 @@
  	 <!--  Main -->
  	<select id="login" parameterType="com.min.vo.MVO" resultType = "com.min.vo.MVO">
  		select * from users where email = #{email} and pw = #{pw}
- 		
  	</select>
+ 	
+ 	<insert id="join" parameterType="com.min.vo.MVO">
+ 		insert into users(idx,id,email,pw,name) values(users_seq.nextval, #{id}, #{email} , #{pw} , #{name})
+ 	</insert>
+ 	
+ 	<select id="idchk" parameterType="String" resultType="com.min.vo.MVO">
+		select * from users where id = #{id}
+	</select>
  	
  	<!--  ================================================  -->
  	<!-- Board -->

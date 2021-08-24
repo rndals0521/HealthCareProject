@@ -17,4 +17,9 @@ public class MainServiceImpl implements MainService{
 	public MVO selectLogin(MVO mvo) throws Exception {
 		return mainDAO.selectLogin(mvo);
 	}
+	
+	@Override
+	public int insertMembers(MVO mvo) throws Exception {
+		return mainDAO.insertMembers(mvo);
+	}
 }

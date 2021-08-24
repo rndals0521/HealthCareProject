@@ -17,4 +17,9 @@ public class MainDAOImpl implements MainDAO{
 		return sqlSessionTemplate.selectOne("login",mvo);
 	}
 	
+	@Override
+	public int insertMembers(MVO mvo) throws Exception {
+		return sqlSessionTemplate.insert("join",mvo);
+	}
+	
 }
