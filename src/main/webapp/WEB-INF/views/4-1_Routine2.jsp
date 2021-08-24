@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Routine</title>
 <style>
-.ui-datepicker{ font-size: 17px; width: 1000px; height:500px;}
+.ui-datepicker{ font-size: 20px; width: 1000px; height:500px;}
 .ui-datepicker select.ui-datepicker-month{ width:30%;  font-size: 15px; margin-right:5px; }
 .ui-datepicker select.ui-datepicker-year{ width:40%; font-size: 15px; }
 </style>
@@ -42,7 +42,8 @@
 				<span>Fri</span>
 				<span>Jul 02</span>
 				
-				<span> < 이동 > </span>
+				<span> 나의 일정 </span>
+				<span> 알아보자</span>
 			</div>
 			<div class="cal">
 				<h2> 날짜 선택 </h2>

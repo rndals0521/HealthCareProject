@@ -3,10 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-3_Routine_detail.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/4-3_Routine_detail.css" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Routin-detail</title>
+<script type="text/javascript">
+	function back(f) {
+		history.back();
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="Top.jsp"></jsp:include>
@@ -85,15 +90,17 @@
 				</div>
 				
 				<div class="rt-btn">
+				<form method=POST>
 					<div class="rt-date">
 						<input type="date">
 					</div>
-					<div class="rt-btn-modify">
-						<a>수정</a>
+					<div class="rt-btn-list">
+						<input type="button" value ="뒤로가기" onclick="back(this.form)" />
+						<input type="button" value ="수정" onclick="back(this.form)" />
+						<input type="button" value ="삭제" onclick="back(this.form)" />
 					</div>
-					<div class="rt-btn-delete">
-						<a>삭제</a>
-					</div>
+					
+				</form>
 				</div>
 				
 			</div>

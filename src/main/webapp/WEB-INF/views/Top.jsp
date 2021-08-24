@@ -128,7 +128,7 @@
 					<button class="dropbtn">Exercise ▼</button>
 					<div class="dropdown-content">
 						<a href="exercise.do">Excercise List</a>
-						<a href="6-1_Information.jsp">Excercise info</a>
+						<a href="6-1_Information.jsp" >Excercise info</a>
 						<a id="rt">Routine List</a>
 					</div>
 				</div>

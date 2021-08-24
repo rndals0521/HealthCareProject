@@ -77,24 +77,14 @@ td:hover{
 .rt-date{
 	margin-right:730px;
 }
-.rt-btn-modify{
+.rt-btn-list input{
+	margin-right:5px;
+	margin-top:10px;
+	width:100px;
 	box-sizing: border-box;
 	border: 1px solid gray;
 	border-radius: 8px;
-	padding:3px;
-	padding-left:6px;
-	padding-right:6px;
-	margin: 10px;
-	background-color:lightgray;
+	font-size:15px;
 }
 
-.rt-btn-delete{
-	box-sizing: border-box;
-	border: 1px solid gray;
-	border-radius: 8px;
-	padding:3px;
-	padding-left:6px;
-	padding-right:6px;
-	margin: 10px;
-	background-color:lightgray;
-}
+

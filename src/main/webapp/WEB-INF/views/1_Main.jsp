@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/1_Main_V2.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/1_Main.css?ver=1" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8">
 <title>Main</title>

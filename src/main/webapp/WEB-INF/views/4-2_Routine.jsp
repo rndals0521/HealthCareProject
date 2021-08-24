@@ -7,6 +7,17 @@
 
 <meta charset="UTF-8">
 <title>MyRoutine</title>
+<script type="text/javascript">
+	function update_rt(f) {
+		f.action="routine_detail.do";
+		f.submit();
+	}
+	
+	function delete_rt(f){
+		f.action="myroutine.do";
+		f.submit();
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="Top.jsp"></jsp:include>
@@ -37,8 +48,10 @@
 				<div class="r-day-rt">
 					<div class="r-day-rtitem">
 						<a href="routine_detail.do">[ 가슴운동루틴 ]</a>
-						<input type="button" class="r-d-btn" value="수정">
-						<input type="button" class="r-d-btn" value="삭제">
+						<form method="post">
+							<input type="button" class="r-d-btn" value="수정" onclick="update_rt(this.form)"/>
+							<input type="button" class="r-d-btn" value="삭제" onclick="delete_rt(this.form)"/>
+						</form>
 					</div>
 					<div class="r-day-rtitem">
 						<a>[ 가슴운동루틴 ]</a>

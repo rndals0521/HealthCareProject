@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-4_Routine_write.css" type="text/css" rel="stylesheet">
+<link href="resources/css/4-4_Routine_write.css?ver=1" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -12,7 +12,23 @@
 	<jsp:include page="Top.jsp"></jsp:include>
 	
 	<div class="container">
-		
+		<div class="menu">
+				<div class="menu-my">
+					<a href="routine.do"> 내 일정 </a>
+				</div>
+				<div class="menu-myR">
+					<a href="myroutine.do"> My루틴 </a>
+				</div>
+				<div class="menu-share">
+					<a href="routine_share.do"> 루틴공유 </a>
+				</div>
+				<div class="menu-help">
+					<a> HELP </a>
+				</div>
+				<div class="make-btn">
+					<a href="routine_write.do"> 제작 </a>
+				</div>
+			</div>
 		
 		<div class="cal-container">
 			

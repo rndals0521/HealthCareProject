@@ -23,10 +23,10 @@
 					<span>${evo.e_explain }</span>
 				</div>
 				<div class="ex-desc">
-					<span>상완이두근을 발달시키는 운동이다. 벤치에 앉아서 실시하면 상완이두근을 좀 더 고립할 수 있다. 양팔을 동시에 운동하거나 팔을 번갈아가며 운동할 수 있다.</span>
-					<span>난이도 초급</span>
-					<span>운동부위 위팔 앞</span>
-					<span>주운동 근육 부위 상완이두근</span>
+					<!-- 
+					<span>난이도</span>
+					<span>운동부위</span>
+					-->
 					<span>${evo.e_content }</span>
 				</div>
 			</div>

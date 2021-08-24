@@ -23,6 +23,7 @@ public class ExerciseController {
 	private ExerciseService exerciseService;
 	
 	// DB 처리가 안나서 아직 오류남 category와 part를 받아서 리스트가져와서 출력하기
+	// ajax로 해야 깔끔 하게 될것 같긴 하다..
 	@RequestMapping("exercise.do")
 	public ModelAndView exerciseCommand(HttpServletRequest request) {
 		try {

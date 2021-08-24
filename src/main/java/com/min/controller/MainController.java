@@ -20,7 +20,7 @@ public class MainController {
 	
 	@RequestMapping("main.do")
 	public ModelAndView mainCommand() {
-		ModelAndView mv = new ModelAndView("1_Main_v2");
+		ModelAndView mv = new ModelAndView("1_Main");
 		return mv;
 	}
 	
