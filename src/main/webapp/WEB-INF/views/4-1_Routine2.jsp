@@ -48,9 +48,18 @@
 			<div class="cal">
 				<h2> 날짜 선택 </h2>
 				<input type="text" id="Date">
-				<div id ="day-contents">
+				<table>
+					<thead>
+						<tr>
+							<th>루틴명</th>
+							<th>운동1</th>
+							<th>아이디</th>
+						</tr>
+					</thead>
+					<tbody id ="day-contents">
 					
-				</div>
+					</tbody>
+				</table>
 			</div>
 			
 		</div>
@@ -88,6 +97,36 @@
 		}); 
 		
 		$('#Date').datepicker('setDate', 'today');
+		
+		function dayContents(){
+			$("#day-contents").empty();
+			$.ajax({
+				url : "dayContents.do",
+				method : "post",
+				dataType : "json",
+				success : function(data){
+					var tbody="";
+					var total = 0;
+					$.each(data,function(){
+						tbody += "<tr>";
+						tbody += "<td>"+this["r_name"]+"</td>";
+						tbody += "<td>"+this["r_con1"]+"</td>";
+						tbody += "<td>"+this["id"]+"</td>";
+						tbody += "</tr>";
+					});
+					$("#day-contents").append(tbody);
+				},
+				error : function() {alert("읽기 실패");}
+				
+			});
+			
+		}
+		
+		
+		
+		dayContents();
+		
+		
 	});
 
 </script>

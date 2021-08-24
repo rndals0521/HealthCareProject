@@ -3,6 +3,7 @@ package com.min.dao;
 import java.util.List;
 
 import com.min.vo.EVO;
+import com.min.vo.RVO;
 
 public interface ExerciseDAO {
 
@@ -18,5 +19,7 @@ public interface ExerciseDAO {
 	// 운동 수정  수정삭제는 구현안해도될것같기도하고..
 	int updateExerciseUp(EVO evo) throws Exception;
 	
+	List<RVO> selectRoutineList(String id) throws Exception;
 	
+	RVO selectRoutineOneList(String r_id) throws Exception;
 }

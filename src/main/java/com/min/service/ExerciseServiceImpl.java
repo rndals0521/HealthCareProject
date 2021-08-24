@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.min.dao.ExerciseDAO;
 import com.min.vo.EVO;
+import com.min.vo.RVO;
 
 @Service
 public class ExerciseServiceImpl implements ExerciseService{
@@ -42,5 +43,16 @@ public class ExerciseServiceImpl implements ExerciseService{
 	@Override
 	public int updateExerciseUp(EVO evo) throws Exception {
 		return exerciseDAO.updateExerciseUp(evo);
+	}
+	
+	// 루틴 리스트 가져오기
+	@Override
+	public List<RVO> selectRoutineList(String id) throws Exception {
+		return exerciseDAO.selectRoutineList(id);
+	}
+	
+	@Override
+	public RVO selectRoutineOneList(String r_id) throws Exception {
+		return exerciseDAO.selectRoutineOneList(r_id);
 	}
 }

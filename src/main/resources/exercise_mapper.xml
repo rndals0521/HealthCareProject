@@ -51,7 +51,15 @@
 	
 	
 	<!--  ================================================  -->
-	<!--  ================================================  -->
+	<!-- ROUTINE -->
+	<select id="rtList" parameterType="String" resultType="com.min.vo.RVO">
+		select * from routine where id = #{id}
+	</select>
+	
+	<select id="rtOneList" parameterType="String" resultType="com.min.vo.RVO">
+		select * from routine where r_id = #{r_id}
+	</select>
+	
 	<!--  ================================================  -->
 	<!-- FOOD -->
 	

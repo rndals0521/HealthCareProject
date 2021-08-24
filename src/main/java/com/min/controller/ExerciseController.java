@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.min.service.ExerciseService;
 import com.min.vo.EVO;
+import com.min.vo.RVO;
 
 @Controller
 public class ExerciseController {
@@ -71,16 +72,45 @@ public class ExerciseController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "dayContents.do", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public List<RVO> dayContentsCommnad(HttpSession session){
+		try {
+			String id = (String)session.getAttribute("log_id");
+			
+			List<RVO> contentList = exerciseService.selectRoutineList(id);
+			return contentList;
+		} catch (Exception e) {
+		}
+		return null;
+	}
+	
 	@RequestMapping("myroutine.do")
-	public ModelAndView myRoutineCommand() {
-		ModelAndView mv = new ModelAndView("4-2_Routine");
-		return mv;
+	public ModelAndView myRoutineCommand(HttpSession session) {
+		try {
+			ModelAndView mv = new ModelAndView("4-2_Routine");
+			String id = (String)session.getAttribute("log_id");
+			List<RVO> cList = exerciseService.selectRoutineList(id);
+			System.out.println(1);
+			
+			mv.addObject(cList);
+			return mv;
+			// 지금 안넘어가는 것 같은 cList 이부분이 허허허허허
+		} catch (Exception e) {
+		}
+		return null;
 	}
 	
 	@RequestMapping("routine_detail.do")
-	public ModelAndView routineDetailCommand() {
-		ModelAndView mv = new ModelAndView("4-3_Routine_detail");
-		return mv;
+	public ModelAndView routineDetailCommand(@ModelAttribute("r_id")String r_id,RVO rvo) {
+		try {
+			ModelAndView mv = new ModelAndView("4-3_Routine_detail");
+			RVO r_vo = exerciseService.selectRoutineOneList(r_id);
+			return mv;
+		} catch (Exception e) {
+		}
+		return null;
+
 	}
 	
 	@RequestMapping("routine_share.do")

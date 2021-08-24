@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.min.vo.EVO;
+import com.min.vo.RVO;
 
 @Repository
 public class ExerciseDAOImpl implements ExerciseDAO{
@@ -46,5 +47,17 @@ public class ExerciseDAOImpl implements ExerciseDAO{
 	@Override
 	public int updateExerciseUp(EVO evo) throws Exception {
 		return 0;
+	}
+	
+	// 루틴 리스트 가져오기
+	@Override
+	public List<RVO> selectRoutineList(String id) throws Exception {
+		return sqlSessionTemplate.selectList("rtList",id);
+	}
+	
+	
+	@Override
+	public RVO selectRoutineOneList(String r_id) throws Exception {
+		return sqlSessionTemplate.selectOne("rtOneList",r_id);
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,14 +47,31 @@
 			<div class="r-day">
 				<div class="r-day-title">하루 루틴</div>
 				<div class="r-day-rt">
-					<div class="r-day-rtitem">
-						<a href="routine_detail.do">[ 가슴운동루틴 ]</a>
-						<form method="post">
-							<input type="button" class="r-d-btn" value="수정" onclick="update_rt(this.form)"/>
-							<input type="button" class="r-d-btn" value="삭제" onclick="delete_rt(this.form)"/>
-						</form>
-					</div>
-					<div class="r-day-rtitem">
+					
+					<span>23452354</span>
+					
+						<c:forEach var="k" items="${cList }">
+							
+							<c:choose>
+								<c:when test="${k.r_kinds eq 'day' }">
+									<div class="r-day-rtitem">
+										<a href="routine_detail.do">[ ${k.r_name } ]</a>
+										<form method="post">
+											<input type="button" class="r-d-btn" value="수정" onclick="update_rt(this.form)"/>
+											<input type="button" class="r-d-btn" value="삭제" onclick="delete_rt(this.form)"/>
+										</form>
+									</div>
+								</c:when>
+								<c:otherwise>
+									
+										<span>루틴 없음</span>
+									
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					
+					
+					<!-- <div class="r-day-rtitem">
 						<a>[ 가슴운동루틴 ]</a>
 						<input type="button" class="r-d-btn" value="수정">
 						<input type="button" class="r-d-btn" value="삭제">
@@ -72,7 +90,7 @@
 						<a>[ 어깨운동루틴 ]</a>
 						<input type="button" class="r-d-btn" value="수정">
 						<input type="button" class="r-d-btn" value="삭제">
-					</div>
+					</div> -->
 				</div>
 			</div>
 			
