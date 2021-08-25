@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-4_Routine_write.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/4-4_Routine_write.css" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Routine Write</title>
 </head>
 <body>
 	<jsp:include page="Top.jsp"></jsp:include>
@@ -88,29 +88,38 @@
 			</div>
 			
 			<div class="rt-detail">
-				<div class="rt-detail-top">
-					<span>[루틴명 : 나의 어깨운동]</span>
-					<div class="rt-textarea">
-						<input type="text" placeholder="운동과 세트를 입력하세요">
-						<input type="text" placeholder="운동과 세트를 입력하세요">
-						<input type="text" placeholder="운동과 세트를 입력하세요">
-						<input type="text" placeholder="운동과 세트를 입력하세요">
-						<input type="text" placeholder="운동과 세트를 입력하세요">
-						
-					</div> 
-									
-				</div>
-				
-				<div class="rt-btn">
-					<div class="rt-date">
-						<input type="date">
-					</div>
-					<div class="rt-btn-save">
-						<a>저장</a>
+				<form method="post">
+					<div class="rt-detail-top">
+						<div>
+							<span>[루틴명]   <input type="text" name="r_name" placeholder="루틴명을 입력하세요."></span>
+							<br><br>
+							<input type="radio" value="day" name="r_kinds"> day
+							<input type="radio" value="week" name="r_kinds"> week
+							
+						</div>
+						<div class="rt-textarea">
+							<input type="text" name="r_con1" placeholder="운동과 세트를 입력하세요">
+							<input type="text" name="r_con2" placeholder="운동과 세트를 입력하세요">
+							<input type="text" name="r_con3" placeholder="운동과 세트를 입력하세요">
+							<input type="text" name="r_con4" placeholder="운동과 세트를 입력하세요">
+							<input type="text" name="r_con5" placeholder="운동과 세트를 입력하세요">
+							
+						</div> 
+										
 					</div>
 					
-				</div>
-				
+					<div class="rt-btn">
+						<div class="rt-date">
+							<input type="date" id="date">
+						</div>
+						<div class="rt-btn-save">
+							
+							<input type="button" value="저장" onclick="insert_ok(this.form)"/>
+							<input type="reset" value="취소"/>
+						</div>
+						
+					</div>
+				</form>
 			</div>
 			
 		</div>
@@ -119,7 +128,18 @@
 	
 	
 	<jsp:include page="Footer.jsp"></jsp:include>
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$('#date').change(function(){
+		var date = $('#date').val();
+	});
+	
+	function insert_ok(f) {
+		var date = $('#date').val();
+		f.action="insertroutine_ok.do?r_date="+date;
+		f.submit();
+	}
 </script>
+
 </body>
 </html>

@@ -54,10 +54,26 @@ public class ExerciseDAOImpl implements ExerciseDAO{
 	public List<RVO> selectRoutineList(String id) throws Exception {
 		return sqlSessionTemplate.selectList("rtList",id);
 	}
-	
+	@Override
+	public List<RVO> selectRoutineList(String id , String date) throws Exception {
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("id",id);
+		map.put("date",date);
+		return sqlSessionTemplate.selectList("rtList2",map);
+	}
 	
 	@Override
 	public RVO selectRoutineOneList(String r_id) throws Exception {
 		return sqlSessionTemplate.selectOne("rtOneList",r_id);
+	}
+	
+	@Override
+	public int deleteRoutine(String r_id) throws Exception {
+		return sqlSessionTemplate.delete("rtDelete",r_id);
+	}
+	
+	@Override
+	public int insertRoutine(RVO r_vo) throws Exception {
+		return sqlSessionTemplate.insert("rtInsert",r_vo);
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -74,11 +75,11 @@ public class ExerciseController {
 	
 	@RequestMapping(value = "dayContents.do", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public List<RVO> dayContentsCommnad(HttpSession session){
+	public List<RVO> dayContentsCommnad(HttpSession session,String date){
 		try {
 			String id = (String)session.getAttribute("log_id");
 			
-			List<RVO> contentList = exerciseService.selectRoutineList(id);
+			List<RVO> contentList = exerciseService.selectRoutineList(id,date);
 			return contentList;
 		} catch (Exception e) {
 		}
@@ -91,11 +92,50 @@ public class ExerciseController {
 			ModelAndView mv = new ModelAndView("4-2_Routine");
 			String id = (String)session.getAttribute("log_id");
 			List<RVO> cList = exerciseService.selectRoutineList(id);
-			System.out.println(1);
 			
-			mv.addObject(cList);
+			mv.addObject("cList",cList);
 			return mv;
-			// 지금 안넘어가는 것 같은 cList 이부분이 허허허허허
+		} catch (Exception e) {
+		}
+		return null;
+	}
+	
+	@RequestMapping("deleteroutine_ok.do")
+	public ModelAndView deleteRoutineCommand(@RequestParam("r_id")String r_id) {
+		try {
+			int result = exerciseService.deleteRoutine(r_id);
+			if(result>0) {
+				
+				return new ModelAndView("redirect:myroutine.do");
+			}
+		} catch (Exception e) {
+		}
+		return null;
+	}
+	
+	@RequestMapping(value = "insertroutine_ok.do", method=RequestMethod.POST)
+	public ModelAndView insertRoutineCommand(RVO rvo,@ModelAttribute("r_date")String r_date,HttpSession session) {
+		try {
+			String id = (String)session.getAttribute("log_id");
+			
+			
+			RVO r_vo = new RVO();
+			r_vo.setId(id);
+			r_vo.setR_con1(rvo.getR_con1());
+			r_vo.setR_con2(rvo.getR_con2());
+			r_vo.setR_con3(rvo.getR_con3());
+			r_vo.setR_con4(rvo.getR_con4());
+			r_vo.setR_con5(rvo.getR_con5());
+			r_vo.setR_kinds(rvo.getR_kinds().toString());
+			r_vo.setR_name(rvo.getR_name());
+			r_vo.setR_date(r_date);
+			
+						
+			int result = exerciseService.insertRoutine(r_vo);
+			if(result>0) {
+				
+				return new ModelAndView("redirect:myroutine.do");
+			}
 		} catch (Exception e) {
 		}
 		return null;
@@ -105,7 +145,9 @@ public class ExerciseController {
 	public ModelAndView routineDetailCommand(@ModelAttribute("r_id")String r_id,RVO rvo) {
 		try {
 			ModelAndView mv = new ModelAndView("4-3_Routine_detail");
+			System.out.println(r_id);
 			RVO r_vo = exerciseService.selectRoutineOneList(r_id);
+			mv.addObject("rvo",r_vo);
 			return mv;
 		} catch (Exception e) {
 		}

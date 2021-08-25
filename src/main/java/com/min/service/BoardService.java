@@ -15,5 +15,5 @@ public interface BoardService {
 	
 	int insertBVO(BVO bvo) throws Exception;
 	
-	
+	int deleteBVO(String b_idx) throws Exception;
 }

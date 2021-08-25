@@ -6,6 +6,7 @@
  
  <mapper namespace="exercise">
  	 <!--  Main -->
+ 	<!--  ================================================  -->
  	<select id="login" parameterType="com.min.vo.MVO" resultType = "com.min.vo.MVO">
  		select * from users where email = #{email} and pw = #{pw}
  	</select>
@@ -18,8 +19,8 @@
 		select * from users where id = #{id}
 	</select>
  	
- 	<!--  ================================================  -->
  	<!-- Board -->
+ 	<!--  ================================================  -->
  	<!-- 전체 게시물의 수 -->
 	<select id="boardCount" resultType="int">
 		select count(*) from board
@@ -39,8 +40,8 @@
 	
 	
 	
-	<!--  ================================================  -->    
 	<!-- Exercise -->
+	<!--  ================================================  -->    
 	<select id="exList" parameterType="map" resultType="com.min.vo.EVO">
 		select * from exercise where e_category = #{category} and e_part = #{part}
 	</select>
@@ -50,18 +51,31 @@
 	</select>
 	
 	
-	<!--  ================================================  -->
 	<!-- ROUTINE -->
+	<!--  ================================================  -->
 	<select id="rtList" parameterType="String" resultType="com.min.vo.RVO">
 		select * from routine where id = #{id}
+	</select>
+	
+	<select id="rtList2" parameterType="Map" resultType="com.min.vo.RVO">
+		select * from routine where id = #{id} and r_date = #{date}
 	</select>
 	
 	<select id="rtOneList" parameterType="String" resultType="com.min.vo.RVO">
 		select * from routine where r_id = #{r_id}
 	</select>
 	
-	<!--  ================================================  -->
+	<delete id="rtDelete" parameterType="String">
+		delete from routine where r_id = #{r_id}
+	</delete>
+	
+	<insert id="rtInsert" parameterType="com.min.vo.RVO">
+		insert into routine values(routine_seq.nextval, #{r_name} , #{r_con1},#{r_con2},#{r_con3},#{r_con4},#{r_con5},#{r_date},#{r_kinds},#{id} )
+	</insert>
+	
+	
 	<!-- FOOD -->
+	<!--  ================================================  -->
 	
 	
  </mapper>

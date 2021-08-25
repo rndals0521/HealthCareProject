@@ -39,4 +39,9 @@ public class BoardDAOImpl implements BoardDAO{
 	public int updateHit(String b_idx) throws Exception {
 		return sqlSessionTemplate.update("boardUpdate",b_idx);
 	}
+	
+	@Override
+	public int deleteBVO(String b_idx) throws Exception {
+		return sqlSessionTemplate.delete("boardDelete",b_idx);
+	}
 }

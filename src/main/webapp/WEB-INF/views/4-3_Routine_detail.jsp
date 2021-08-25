@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,12 +79,22 @@
 			
 			<div class="rt-detail">
 				<div class="rt-detail-top">
-					<span>[루틴명 : 나의 어깨운동]</span>
+					<div>
+						<span>[루틴명 : ${rvo.r_name }]</span>
+						<br><br>
+						<span>분류 : ${rvo.r_kinds }</span>
+						<br><br>
+						<span>날짜 : ${rvo.r_date }</span>
+					</div>
 					<div class="rt-textarea">
 						<ul>
-							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;팔굽혀펴기 2세트</li>
-							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;턱걸이 2세트</li>
-							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;사이드레터럴레이즈 3세트</li>
+						
+							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;${rvo.r_con1 }</li>
+							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;${rvo.r_con2 }</li>
+							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;${rvo.r_con3 }</li>
+							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;${rvo.r_con4 }</li>
+							<li><i class="fas fa-walking"></i>&nbsp;&nbsp;${rvo.r_con5 }</li>
+						
 						</ul>
 					</div> 
 									
@@ -92,7 +103,7 @@
 				<div class="rt-btn">
 				<form method=POST>
 					<div class="rt-date">
-						<input type="date">
+						
 					</div>
 					<div class="rt-btn-list">
 						<input type="button" value ="뒤로가기" onclick="back(this.form)" />

@@ -95,5 +95,11 @@ public class BoardController {
 		return mv;
 	}
 	
+	@RequestMapping("post.do")
+	public ModelAndView postCommand() {
+		ModelAndView mv = new ModelAndView("7_POST");
+		return mv;
+	}
+	
 	
 }

@@ -38,13 +38,14 @@
 }
 .r-day-title{
 	box-sizing:boder-box;
-	width:400px;
+	width:25%;
 	margin-right:30px;
 	line-height:200px;
 }
 
 .r-day-rt{
 	display:flex;
+	width:70%;
 	flex-wrap: nowrap;
 	box-sizing:boder-box;
 	border:1px solid black;
@@ -54,6 +55,7 @@
 	padding-right:20px;
 	overflow-x: scroll;
 	overflow-y:hidden;
+	white-space:nowrap;
 }
 .r-day-rtitem{
 	box-sizing:boder-box;
@@ -79,12 +81,13 @@
 }
 .r-week-title{
 	box-sizing:boder-box;
-	width:400px;
+	width:25%;
 	margin-right:30px;
 	line-height:200px;
 }
 .r-week-rt{
 	display:flex;
+	width:70%;
 	flex-wrap: nowrap;
 	box-sizing:boder-box;
 	border:1px solid black;
@@ -94,6 +97,7 @@
 	padding-right:20px;
 	overflow-x: scroll;
 	overflow-y:hidden;
+	white-space:nowrap;
 }
 .r-week-rtitem{
 	box-sizing:boder-box;

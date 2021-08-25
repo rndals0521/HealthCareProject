@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-1_Routine2.css?ver=1" type="text/css" rel="stylesheet">
+<link href="resources/css/4-1_Routine2.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <meta charset="UTF-8">
@@ -48,11 +49,15 @@
 			<div class="cal">
 				<h2> 날짜 선택 </h2>
 				<input type="text" id="Date">
-				<table>
+				<table id="day-contents-body">
 					<thead>
 						<tr>
 							<th>루틴명</th>
 							<th>운동1</th>
+							<th>운동2</th>
+							<th>운동3</th>
+							<th>운동4</th>
+							<th>운동5</th>
 							<th>아이디</th>
 						</tr>
 					</thead>
@@ -91,26 +96,63 @@
 			showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다. 
 			dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식. 
 			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], //월의 한글표시
-			yearRange: "2010:2021" //연도 범위
+			yearRange: "2010:2021", //연도 범위
+			onSelect:function(d){
+				
+				
+				var date = d;
+				
+				dayContents(date);
+			}
 
 			
 		}); 
 		
 		$('#Date').datepicker('setDate', 'today');
 		
-		function dayContents(){
+		
+		function dayContents(date){
 			$("#day-contents").empty();
 			$.ajax({
-				url : "dayContents.do",
+				url : "dayContents.do?date="+date,
 				method : "post",
 				dataType : "json",
 				success : function(data){
 					var tbody="";
 					var total = 0;
 					$.each(data,function(){
+						
 						tbody += "<tr>";
 						tbody += "<td>"+this["r_name"]+"</td>";
-						tbody += "<td>"+this["r_con1"]+"</td>";
+						if(this["r_con1"] != null){
+							tbody += "<td>"+this["r_con1"]+"</td>";
+						}else{
+							tbody += "<td></td>";
+						}
+						if(this["r_con2"] != null){
+							tbody += "<td>"+this["r_con2"]+"</td>";
+						}else{
+							tbody += "<td></td>";
+						}
+						if(this["r_con3"] != null){
+							tbody += "<td>"+this["r_con3"]+"</td>";
+						}else{
+							tbody += "<td></td>";
+						}
+						if(this["r_con4"] != null){
+							tbody += "<td>"+this["r_con4"]+"</td>";
+						}else{
+							tbody += "<td></td>";
+						}
+						if(this["r_con5"] != null){
+							tbody += "<td>"+this["r_con5"]+"</td>";
+						}else{
+							tbody += "<td></td>";
+						}
+						/* tbody += "<td>"+this["r_con2"]+"</td>";
+						tbody += "<td>"+this["r_con3"]+"</td>";
+						tbody += "<td>"+this["r_con4"]+"</td>";
+						tbody += "<td>"+this["r_con5"]+"</td>"; */
 						tbody += "<td>"+this["id"]+"</td>";
 						tbody += "</tr>";
 					});
@@ -124,7 +166,7 @@
 		
 		
 		
-		dayContents();
+		
 		
 		
 	});

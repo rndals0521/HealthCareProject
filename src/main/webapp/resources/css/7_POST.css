@@ -1,0 +1,296 @@
+@charset "UTF-8";
+ul,li,ol,dl{
+	display:none;
+}
+ul{
+	margin-block-start:1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+div{
+	display:block;
+}
+form{
+	display:block;
+}
+#content-container{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding:5px;
+	clear: both;
+	box-sizing: border-box;
+	border:none;
+}
+#content-container:after{
+	content: '';
+	display:block;
+	clear:both;
+	
+}
+
+#main-container{
+	width: 95%;
+	margin: auto;
+	padding:5px;
+	box-sizing: border-box;
+	border:1px solid lightgray;
+	border-top-right-radius:25px;
+}
+
+#sub-title{
+	display:table;
+	width: 85%;
+	padding:15px;
+	table-layout: fixed;
+	background-color:white;
+}
+.title-area {
+	display:table-cell;
+	padding:5px;
+	width: 550px;
+	word-wrap: break-word;
+	word-break: break-word;
+	margin-bottom:5px;
+}
+
+.sub-title-color{
+	display:inline;
+	font-weight:600;
+	font-size: 22px;
+	line-height: 24px;
+	vertical-align: sub;
+	margin-top:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.me-feed{
+	display: table-cell;
+	text-align:right;
+	vertical-align:top;
+	white-space: nowrap;
+}
+
+.list-category{
+	padding:6px 0 10px;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	
+}
+.category-area{
+	width:50%;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	margin:5px;
+}
+.category-area div{
+	margin-right:13px;
+}
+.category-area div:hover{
+	background-color:#e5e5e5;
+}
+.write-area{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+	width:50%;
+	margin:10px;
+}
+.write-area a{
+	box-sizing:border-box;
+	border:1px solid gray;
+	background-color:#e5e5e5;
+	border-radius:10px;
+	padding: 6px 6px;
+	margin-right:5px;
+	font-size:13px;
+}
+/*  */
+tr{
+	display:table-row;
+	vertical-align:inherit;
+	border-color:inherit;
+}
+td{
+	display:table-cell; 
+	vertical-align:inherit; 
+}
+table{
+	display: table;
+	box-sizing: border-box;
+	border-color: grey;
+	text-indent:initial;
+	border-spacing:2px;
+}
+
+.article-board thead th{
+	border-top-color: #333;
+	border-bottom-color:#f2f2f2;
+	color:#4e4e4e;
+	height:40px;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+/* 이부분부터 찾아서 보면 됩니다잉 */
+.article-board table{
+	word-wrap:break-word;
+	word-break: break-word;
+	table-layout: fixed;
+	border-collapse:collapse;
+}
+.article-board thead th{
+	color:#4e4e4e;
+}
+.article-board .th_name{
+	padding: 0 6px;
+	text-align: left;
+}
+
+
+/* 이게 있으면 게시판 화면이 고정이되어있어서 
+화면 불러올때 이상하게 나옴 일단 넣어놨다가 수정하자*/
+#out-Notice{
+	/* box-sizing: border-box;
+	border: 1px solid black; */
+	position: relative;
+	width:100%;
+}
+#out-Board{
+	position:relative;
+	width:100%;
+}
+
+
+/*  */
+.blind{
+	overflow:hidden;
+	position:absolute;
+	clip:rect(0 0 0 0);
+	width:1px;
+	height:1px;
+	margin:-1px;
+}
+.prev-next{
+	background-color:#f9f9f9;
+	margin-top: 32px;
+	height: 40px;
+	padding-top: 16px;
+	text-align: center;
+}
+
+/*  */
+.list-search{
+	border-top-color: #ebebea;
+	background-color: #f9f9f8;
+	padding: 16px 0 16px;
+	border-top:1px solid #ebebea;
+	text-align: center;
+}
+input[type="hidden" i]{
+	display:none;
+	appearance:none;
+	background-color:initial;
+	cursor:default;
+	border:initial;
+}
+.select-component{
+	background-color:#fff;
+	display: inline-block;
+	position:relative;
+	height:36px;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	border:solid 1px #ddd;
+	text-align:left;
+	vertical-align:top;
+}
+.form_search{
+	background-color:#fff;
+	display: inline-block;
+	position:relative;
+	height:36px;
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	border:solid 1px #ddd;
+	text-align:left;
+	vertical-align:top;
+}
+
+.select-component .select_box{
+	display:block;
+	position: relative;
+	height: 34px;
+	padding: 9px 36px 0 12px;
+	box-sizing: border-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.select-component .select_box:after{
+	content: '';
+	position: absolute;
+	top:15px;
+	right:12px;
+	background-position: -229px -185px;
+	width:12px;
+	height:5px;
+}
+.select-component .select-list{
+	
+	display:block;
+	overflow-y:auto;
+	position:absolute;
+	top:34px;
+	left:-1px;
+	border: solid 1px #ddd;
+	background-color:#fff;
+	z-index: 12;
+}
+
+.select-component .select-list li a{
+	display:block;
+	height: 36px;
+	padding: 0 12px;
+	line-height: 36px;
+	color:#333;
+}
+
+.input-search-area{
+	display:inline-block;
+}
+.input-search-area .input-component{
+	float:left;
+	border-right:0;
+}
+.input-component{
+	background-color:#fff;
+	display:inline-block;
+	position:relative;
+	height:36px;
+	box-sizing: border-box;
+	border:solid 1px #ddd;
+	vertical-align: top;
+	
+}
+.input-component input{
+	width:100%;
+	height:100%;
+	padding: 0 12px;
+	border:0;
+	box-sizing: border-box;
+	
+}
+
+.btn-search-green{
+	display:inline-block;
+	width: 56px;
+	height:36px;
+	background-color:#03c75a;
+	border:0;
+	color:#fff;
+}

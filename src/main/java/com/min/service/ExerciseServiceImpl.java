@@ -50,9 +50,24 @@ public class ExerciseServiceImpl implements ExerciseService{
 	public List<RVO> selectRoutineList(String id) throws Exception {
 		return exerciseDAO.selectRoutineList(id);
 	}
+	@Override
+	public List<RVO> selectRoutineList(String id, String date) throws Exception {
+		return exerciseDAO.selectRoutineList(id, date);
+	}
+	
 	
 	@Override
 	public RVO selectRoutineOneList(String r_id) throws Exception {
 		return exerciseDAO.selectRoutineOneList(r_id);
+	}
+	
+	@Override
+	public int deleteRoutine(String r_id) throws Exception {
+		return exerciseDAO.deleteRoutine(r_id);
+	}
+	
+	@Override
+	public int insertRoutine(RVO r_vo) throws Exception {
+		return exerciseDAO.insertRoutine(r_vo);
 	}
 }

@@ -68,10 +68,10 @@
 					</li>
 					 -->
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=biceps"><img src="resources/images/arm2_s.png">이두</a>
+						<a href="exercise.do?category=health&part=chest"><img src="resources/images/back_s.png">가슴</a>
 					</li>
 					<li class="list-category">
-						<a href="exercise.do?category=health&part=chest"><img src="resources/images/back_s.png">가슴</a>
+						<a href="exercise.do?category=health&part=biceps"><img src="resources/images/arm2_s.png">이두</a>
 					</li>
 					<li class="list-category">
 						<a href="exercise.do?category=health&part=back"><img src="resources/images/sungmo_s.png">등</a>

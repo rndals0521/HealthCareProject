@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-2_Routine.css" type="text/css" rel="stylesheet">
+<link href="resources/css/4-2_Routine.css?ver=1" type="text/css" rel="stylesheet">
 
 <meta charset="UTF-8">
 <title>MyRoutine</title>
@@ -14,10 +14,7 @@
 		f.submit();
 	}
 	
-	function delete_rt(f){
-		f.action="myroutine.do";
-		f.submit();
-	}
+	
 </script>
 </head>
 <body>
@@ -48,13 +45,33 @@
 				<div class="r-day-title">하루 루틴</div>
 				<div class="r-day-rt">
 					
-					<span>23452354</span>
-					
 						<c:forEach var="k" items="${cList }">
 							
 							<c:choose>
 								<c:when test="${k.r_kinds eq 'day' }">
 									<div class="r-day-rtitem">
+										<a href="routine_detail.do?r_id=${k.r_id }">[ ${k.r_name } ]</a>
+										<form method="post">
+											<input type="button" class="r-d-btn" value="수정" onclick="update_rt(this.form)"/>
+											<input type="button" class="r-d-btn" value="삭제" onclick="location.href='deleteroutine_ok.do?r_id=${k.r_id}'"/>
+										</form>
+									</div>
+								</c:when>
+							</c:choose>
+						</c:forEach>
+					
+					
+				</div>
+			</div>
+			
+			<div class="r-week">
+				<div class="r-week-title">일주일 루틴</div>
+				<div class="r-week-rt">
+					<c:forEach var="k" items="${cList }">
+							
+							<c:choose>
+								<c:when test="${k.r_kinds eq 'week' }">
+									<div class="r-week-rtitem">
 										<a href="routine_detail.do">[ ${k.r_name } ]</a>
 										<form method="post">
 											<input type="button" class="r-d-btn" value="수정" onclick="update_rt(this.form)"/>
@@ -62,67 +79,9 @@
 										</form>
 									</div>
 								</c:when>
-								<c:otherwise>
-									
-										<span>루틴 없음</span>
-									
-								</c:otherwise>
 							</c:choose>
 						</c:forEach>
 					
-					
-					<!-- <div class="r-day-rtitem">
-						<a>[ 가슴운동루틴 ]</a>
-						<input type="button" class="r-d-btn" value="수정">
-						<input type="button" class="r-d-btn" value="삭제">
-					</div>
-					<div class="r-day-rtitem">
-						<a>[ 팔운동루틴 ]</a>
-						<input type="button" class="r-d-btn" value="수정">
-						<input type="button" class="r-d-btn" value="삭제">
-					</div>
-					<div class="r-day-rtitem">
-						<a>[ 등운동루틴 ]</a>
-						<input type="button" class="r-d-btn" value="수정">
-						<input type="button" class="r-d-btn" value="삭제">
-					</div>
-					<div class="r-day-rtitem">
-						<a>[ 어깨운동루틴 ]</a>
-						<input type="button" class="r-d-btn" value="수정">
-						<input type="button" class="r-d-btn" value="삭제">
-					</div> -->
-				</div>
-			</div>
-			
-			<div class="r-week">
-				<div class="r-week-title">일주일 루틴</div>
-				<div class="r-week-rt">
-					<div class="r-week-rtitem">
-						<a href="#">[ 운동루틴1 ]</a>
-						<input type="button" class="r-w-btn" value="수정">
-						<input type="button" class="r-w-btn" value="삭제">
-						
-					</div>
-					<div class="r-week-rtitem">
-						<a href="#">[ 운동루틴1 ]</a>
-						<input type="button" class="r-w-btn" value="수정">
-						<input type="button" class="r-w-btn" value="삭제">
-					</div>
-					<div class="r-week-rtitem">
-						<a href="#">[ 운동루틴2 ]</a>
-						<input type="button" class="r-w-btn" value="수정">
-						<input type="button" class="r-w-btn" value="삭제">
-					</div>
-					<div class="r-week-rtitem">
-						<a href="#">[ 운동루틴3 ]</a>
-						<input type="button" class="r-w-btn" value="수정">
-						<input type="button" class="r-w-btn" value="삭제">
-					</div>
-					<div class="r-week-rtitem">
-						<a href="#">[ 운동루틴4 ]</a>
-						<input type="button" class="r-w-btn" value="수정">
-						<input type="button" class="r-w-btn" value="삭제">
-					</div>
 				</div>
 			
 			</div>

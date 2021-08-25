@@ -34,4 +34,8 @@ public class BoardServiceImpl implements BoardService{
 		return boardDAO.updateHit(b_idx);
 	}
 	
+	@Override
+	public int deleteBVO(String b_idx) throws Exception {
+		return boardDAO.deleteBVO(b_idx);
+	}
 }

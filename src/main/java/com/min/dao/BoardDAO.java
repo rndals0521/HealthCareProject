@@ -13,4 +13,8 @@ public interface BoardDAO {
 	List<BVO> selectBoardList(int begin, int end) throws Exception;
 	
 	int insertBVO(BVO bvo) throws Exception;
+	
+	int deleteBVO(String b_idx) throws Exception;
+	
+	
 }
