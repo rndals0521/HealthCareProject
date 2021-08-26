@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/4-4_Routine_write.css" type="text/css" rel="stylesheet">
+<link href="resources/css/4-4_Routine_write.css?ver=1" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Routine Write</title>
@@ -113,7 +113,7 @@
 							<input type="date" id="date">
 						</div>
 						<div class="rt-btn-save">
-							
+							<input type="button" value ="뒤로가기" onclick="back(this.form)" />
 							<input type="button" value="저장" onclick="insert_ok(this.form)"/>
 							<input type="reset" value="취소"/>
 						</div>
@@ -138,6 +138,10 @@
 		var date = $('#date').val();
 		f.action="insertroutine_ok.do?r_date="+date;
 		f.submit();
+	}
+	
+	function back(f) {
+		history.back();
 	}
 </script>
 

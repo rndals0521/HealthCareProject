@@ -28,7 +28,7 @@
 	box-sizing:border-box;
 	border: 0.5px solid lightgray;
 	padding:2px;
-	height:830px;
+	height:730px;
 }
 
 .cal-day h1{margin-bottom:20px;}
@@ -97,13 +97,22 @@ td:hover{
 	margin-right:400px;
 }
 .rt-btn-save{
+	display:flex;
+	flex-direction:row;
 	box-sizing: border-box;
-	border: 1px solid gray;
-	border-radius: 8px;
 	padding:3px;
 	padding-left:6px;
 	padding-right:6px;
 	margin: 10px;
-	background-color:lightgray;
+
 }
 
+.rt-btn-save input{
+	box-sizing:border-box;
+	border:1px solid gray;
+	background-color:#e5e5e5;
+	border-radius:10px;
+	padding: 6px 6px;
+	margin-right:5px;
+	font-size:13px;
+}

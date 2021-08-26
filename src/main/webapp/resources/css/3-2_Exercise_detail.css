@@ -50,10 +50,19 @@
 	display:flex;
 	flex-direction:row;
 	text-align:center;
+	margin-bottom: 50px;
 }
-.ex-item-info h3{
-	margin: 0 5px;
+#ex-explain h3{
+	margin: 15px 15px;
 	width:25%;
+}
+#ex-explain span{
+	margin: 15px; 15px;
+}
+#ex-explain{
+	display:flex;
+	flex-direction:column;
+	
 }
 .ex-item-image{
 	width:400px;

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="resources/css/3-2_Exercise_detail.css" type="text/css" rel="stylesheet">
+<link href="resources/css/3-2_Exercise_detail.css?ver=1" type="text/css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Excercise</title>
 </head>
@@ -19,8 +19,10 @@
 			<div class="ex-item">
 				<div class="ex-item-info">
 					<a href="#"><img class="ex-item-image" src="resources/images/${evo.e_image }"></a>
-					<h3>${evo.e_name }</h3>
-					<span>${evo.e_explain }</span>
+					<div id="ex-explain">
+						<h3>${evo.e_name }</h3>
+						<span>${evo.e_explain }</span>
+					</div>
 				</div>
 				<div class="ex-desc">
 					<!-- 

@@ -1,11 +1,17 @@
 package com.min.controller;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.min.service.BoardService;
@@ -101,5 +107,38 @@ public class BoardController {
 		return mv;
 	}
 	
+	@RequestMapping("write.do")
+	public ModelAndView writeCommand() {
+		ModelAndView mv = new ModelAndView("7_WRITE");
+		return mv;
+	}
 	
+	@RequestMapping(value="write_ok.do", method = RequestMethod.POST)
+	public ModelAndView writeOkCommand(BVO bvo, HttpServletRequest request) {
+		try {
+			String path = request.getSession().getServletContext().getRealPath("/resources/upload");
+			MultipartFile file = bvo.getF_name();
+			
+			if(file.isEmpty()) {
+				bvo.setFile_name("");
+			}else {
+				bvo.setFile_name(file.getOriginalFilename());
+			}
+			
+			int result = boardService.insertBVO(bvo);
+			if(result>0) {
+				if(! bvo.getFile_name().isEmpty()) {
+					byte[] in = file.getBytes();
+					File out = new File(path, bvo.getFile_name());
+					FileCopyUtils.copy(in, out);
+				}
+				return new ModelAndView("redirect:board.do");
+			}else {
+				return new ModelAndView("redirect:write.do");
+			}
+			
+		} catch (Exception e) {
+		}
+		return null;
+	}
 }

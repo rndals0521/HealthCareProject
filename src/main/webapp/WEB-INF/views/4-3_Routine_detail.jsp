@@ -12,6 +12,10 @@
 	function back(f) {
 		history.back();
 	}
+	function del_rt(f) {
+		f.action="deleteroutine_ok.do?r_id="+${rvo.r_id};
+		f.submit();
+	}
 </script>
 </head>
 <body>
@@ -108,7 +112,7 @@
 					<div class="rt-btn-list">
 						<input type="button" value ="뒤로가기" onclick="back(this.form)" />
 						<input type="button" value ="수정" onclick="back(this.form)" />
-						<input type="button" value ="삭제" onclick="back(this.form)" />
+						<input type="button" value ="삭제" onclick="del_rt(this.form)" />
 					</div>
 					
 				</form>

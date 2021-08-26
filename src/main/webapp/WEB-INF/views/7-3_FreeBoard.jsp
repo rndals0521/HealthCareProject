@@ -86,7 +86,7 @@
 					</div>
 					<div class="board-list">
 						<div class="inner_list">
-							<a>헬스 잘하는 법 공유합니다.</a>
+							<a href="post.do">헬스 잘하는 법 공유합니다.</a>
 						</div>
 					</div>
 				</td>

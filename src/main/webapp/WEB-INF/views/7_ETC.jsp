@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <link href="resources/css/7-2_Notice_v1.css" type="text/css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 ﻿<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -66,7 +67,7 @@
 				
 				<div class="write-area">
 					<a><input type="checkbox"/>공지숨기기</a>
-					<a href="write.jsp"><i class="fas fa-pen"></i>글쓰기</a>
+					<a href="write.do"><i class="fas fa-pen"></i>글쓰기</a>
 				</div>
 			</div>
 			
