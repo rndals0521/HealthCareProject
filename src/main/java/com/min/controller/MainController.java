@@ -47,7 +47,7 @@ public class MainController {
 				// 관리자
 				if(mvo.getId().contentEquals("admin") && mvo.getPw().equals("admin")) {
 					session.setAttribute("admin", "ok");
-					return new ModelAndView("admin");// 관리자 화면으로 가자.. 만들어야 된다..!;
+					return new ModelAndView("redirect:admin.do");// 관리자 화면으로 가자.. 만들어야 된다..!;
 				}
 				return new ModelAndView("redirect:main.do");
 			}
@@ -56,6 +56,11 @@ public class MainController {
 			session.setAttribute("log_in", "0");
 		}
 		return null;
+	}
+	
+	@RequestMapping("admin.do")
+	public ModelAndView adminCommand() {
+		return new ModelAndView("8_Admin");
 	}
 	
 	@RequestMapping("logout.do")

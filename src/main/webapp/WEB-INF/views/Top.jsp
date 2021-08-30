@@ -146,6 +146,11 @@
 						<a href="board.do?cPage=1">Board</a>
 						<a href="#">Q&A</a>
 						<a href="#">MyPage</a>
+						<c:choose>
+							<c:when test="${admin eq 'ok' }">
+								<a href="admin.do">관리자페이지</a>
+							</c:when>
+						</c:choose>
 					</div>
 				</div>
 			</div>
